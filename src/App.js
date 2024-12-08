@@ -2,11 +2,10 @@ import './App.css';
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LeftBar from './Components/Leftbar';
-import AddPost from './Components/AddPost';
+import AddPost from './Components/Main';
 import Profile from './Components/Profile';
 import SignIn from './Pages/SignIn';
 import SignUp from './Pages/SignUp';
-import RightBar from './Components/Rightbar';
 import Message from './Components/Message';
 
 const ErrorRoute = () => <div>Page not found</div>;

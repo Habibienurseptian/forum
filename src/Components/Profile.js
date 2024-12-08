@@ -72,7 +72,7 @@ function Profile({ profile }){
                         </div>
                     </div>
                 </div>
-                <hr className="border-gray-800"></hr>
+                <hr className="border-gray-800 border-4"></hr>
             </div>
             <Konten />
             <Konten />
