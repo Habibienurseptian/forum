@@ -12,6 +12,21 @@ function Main (){
     const [postReplay, setPostReplay] = useState("");
     const [showCommentInput, setShowCommentInput] = useState({});
     const [currentTime, setCurrentTime] = useState(new Date());
+    
+    function handleLike(postId) {
+        setPosts((prevPosts) =>
+            (prevPosts || []).map((post) =>
+                post && post.id === postId
+                    ? {
+                        ...post,
+                        likes: post.likedByUser ? post.likes - 1 : post.likes + 1,
+                        likedByUser: !post.likedByUser
+                    }
+                    : post
+            )
+        );
+    }
+    
 
     const handleShareClick = () => {
         alert(`Post has been shared!`);
@@ -125,6 +140,7 @@ function Main (){
                         post={post}
                         formatTime={formatTime}
                         currentTime={currentTime}
+                        handleLike={handleLike}
                         toggleCommentInput={toggleCommentInput}
                         handleShareClick={handleShareClick}
                     />

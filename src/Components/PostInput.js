@@ -1,4 +1,5 @@
 import React from 'react';
+import BtnPost from './Button/BtnPost';
 
 function PostInput({ postContent, handleChange, handlePost }) {
     return (
@@ -29,7 +30,6 @@ function PostInput({ postContent, handleChange, handlePost }) {
                 <div className="w-10"></div>
                 <div className="w-64 px-2">
                     <div className="flex items-center">
-                        {/* Icon buttons */}
                         <div className="flex-1 text-center px-1 py-1 m-2">
                             <a
                                 href="#"
@@ -109,13 +109,11 @@ function PostInput({ postContent, handleChange, handlePost }) {
                     </div>
                 </div>
                 <div className="flex-1">
-                    <button
-                        type="button"
-                        onClick={handlePost}
-                        className="bg-blue-400 hover:bg-blue-500 mt-5 text-white font-bold py-2 px-8 rounded-full mr-8 float-right"
-                    >
-                        Post
-                    </button>
+                <BtnPost
+                    onClick={handlePost}
+                    label="Post"
+                    className="mt-5 mr-8 float-right"
+                />
                 </div>
             </div>
             <hr className="border-gray-800 border-4"></hr>

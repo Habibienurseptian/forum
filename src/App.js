@@ -15,7 +15,7 @@ const App = () => {
     {
       path: "/",
       element: (
-        <div className="bg-black relative h-screen overflow-y-auto">
+        <div className="bg-black  h-screen overflow-y-auto">
           <div className="md:flex justify-center">
             <LeftBar />
             <main role="main" className="md:w-[990px]">

@@ -1,7 +1,7 @@
 import React from "react";
 import Konten from "./Konten";
 
-function Profile({ profile }){
+function Profile(){
     return(
         <div>
             <div className="flex sticky top-0 backdrop-blur-md">

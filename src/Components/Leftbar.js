@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import ProfileCard from "./Button/ProfileCrad";
+import BtnPost from "./Button/BtnPost";
+import CloseButton from "./Button/CloseBtn";
+import PostButton from "./Button/PostBar";
+
 
 function LeftBar(){
   const [postModal, setpostModal] = useState(false);
+  
 
     return (
-      <header className=" text-white h-auto md:py-5">
+      <header className=" text-white h-auto md:py-5  bg-red-500">
         <div className='w-[275px]'>
           <div className="fixed h-screen">  
             <nav className="px-2 w-[65px] md:w-[250px]">
@@ -60,39 +66,18 @@ function LeftBar(){
                   </a>
                 </li>
               </ul>
-              <button onClick={() => setpostModal(true)} className="w-[48px] md:w-[230px]">
-                <div className="mt-2 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full bg-blue-400 hover:bg-blue-500">
-                  <div className="md:invisible">
-                    <svg className="mr-4 h-8 w-8" fill="none" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                      <path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
-                    </svg>
-                  </div>
-                  <span className="md:block hidden text-xl px-10">Post</span>
-                </div>
-              </button>
+              <PostButton
+                onClick={() => setpostModal(true)}
+                label="Post"
+                className="custom-class"
+              />
             </nav>
-            <div className="absolute bottom-8">
-              <div className="flex-shrink-0 flex hover:bg-gray-800 rounded-full px-2 py-2 mt-12 mr-1 ml-1">
-                <a href="#" className="flex-shrink-0 group block">
-                  <div className="flex items-center">
-                    <div>
-                      <img className="inline-block h-10 w-10 rounded-full" src="https://pbs.twimg.com/profile_images/1254779846615420930/7I4kP65u_400x400.jpg" alt="Profile" />
-                    </div>
-                    <div className="ml-2 md:block hidden">
-                      <p className="text-base leading-6 font-medium text-white">
-                        Miyuzaki San
-                      </p>
-                      <p className="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                        @san_miyuzaki
-                      </p>
-                    </div>
-                    <svg className="md:block hidden mr-1 ml-7 h-6 w-10" fill="none" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
-                      <path d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"/>
-                    </svg>
-                  </div>
-                </a>
-              </div>
-            </div>
+            <ProfileCard
+              name="Miyuzaki San"
+              username="san_miyuzaki"
+              profileImage="https://pbs.twimg.com/profile_images/1254779846615420930/7I4kP65u_400x400.jpg"
+              href="#"
+            />
           </div>
         </div>
       {postModal && (
@@ -102,7 +87,7 @@ function LeftBar(){
     )
 };
 
-function ModalPost(props){
+function ModalPost({ onClose , handlePost}){
   return(
     <div className="flex fixed inset-0 bg-gray-500 bg-opacity-50 justify-center items-center">
       <div className="bg-black p-4 rounded-lg shadow-lg md:w-1/3">
@@ -113,11 +98,7 @@ function ModalPost(props){
           <div className="flex-1 px-1 pt-2 mt-4 w-auto">
             <textarea className="resize-none outline-none bg-transparent text-gray-400 font-medium text-lg w-full" rows="10" cols="50" placeholder="What's happening?"></textarea>
           </div>
-          <button onClick={props.onClose} type="button" className="text-white flex hover:bg-red-500 h-7 rounded-full w-7 items-center justify-center">
-              <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-              </svg>
-          </button>
+          <CloseButton onClose={onClose} />
         </div>
         <hr className="border-gray-800 border-1"></hr>
         <div className="flex">
@@ -163,9 +144,11 @@ function ModalPost(props){
               </div>
             </div>
             <div className="flex-1">
-              <button className="bg-blue-400 hover:bg-blue-500 mt-5 text-white font-bold py-2 px-8 rounded-full mr-8 float-right">
-                  Post
-              </button>
+              <BtnPost
+                onClick={handlePost}
+                label="Post"
+                className="mt-5 mr-8 float-right"
+              />
             </div>
           </div>
       </div>

@@ -1,16 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Like from './Button/Like'
 import CommentButton from "./Button/Comment";
 import ShareButton from "./Button/Share";
 
-function Post({ post, formatTime, currentTime, toggleCommentInput, handleShareClick }) {
-    const [liked, setLiked] = useState(post?.liked || false);
-    const [likes, setLikes] = useState(post?.likes || 0);
-
-    const handleLikeChange = (postId) => {
-        setLiked(!liked);
-        setLikes(likes + (liked ? -1 : 1));
-    };
+function Post({ post, formatTime, currentTime, toggleCommentInput, handleShareClick, handleLike }) {
     
     return (
         <article key={post.id} className="hover:bg-gray-800 transition duration-350 ease-in-out">
@@ -47,9 +40,8 @@ function Post({ post, formatTime, currentTime, toggleCommentInput, handleShareCl
                             toggleCommentInput={toggleCommentInput}
                         />
                         <Like 
-                            liked={liked} 
-                            likes={likes} 
-                            onLikeChange={() => handleLikeChange(post.id)}
+                            post={post}
+                            handleLike={handleLike}
                         />
                         <ShareButton onShareClick={handleShareClick} />
                     </div>
