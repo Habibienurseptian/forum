@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ProfileCard from "./Button/ProfileCrad";
+import ProfileCard from "./Button/ProfileCard";
 import BtnPost from "./Button/BtnPost";
 import CloseButton from "./Button/CloseBtn";
-import PostButton from "./Button/PostBar";
+import PostButton from "./Button/BtnPostBar";
 
 
 function LeftBar(){
@@ -11,7 +11,7 @@ function LeftBar(){
   
 
     return (
-      <header className=" text-white h-auto md:py-5  bg-red-500">
+      <header className=" text-white md:py-5">
         <div className='w-[275px]'>
           <div className="fixed h-screen">  
             <nav className="px-2 w-[65px] md:w-[250px]">
@@ -21,11 +21,9 @@ function LeftBar(){
               <ul>
                 <li className="list-none">
                   <Link to="/" className=" mt-2 group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full hover:bg-gray-800 hover:text-blue-300">
-                    <div>
-                      <svg className="mr-4 h-8 w-8 " stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"></path>
-                      </svg>  
-                    </div>
+                    <svg className="md:mr-4 h-8 w-8 " stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" stroke-width="2" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"></path>
+                    </svg>  
                     <span className="md:block hidden text-xl">Home</span>
                   </Link>
                 </li>
@@ -33,23 +31,19 @@ function LeftBar(){
               <ul>
                 <li>
                   <Link to="/message" className="mt-2 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                    <div>
-                      <svg className="mr-4 h-8 w-8" fill="none" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="md:mr-4 h-8 w-8" fill="none" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                         <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                       </svg>
-                    </div>
-                    <span className="md:block hidden text-xl">Messages</span>
+                    <span className="md:block hidden text-xl">Message</span>
                   </Link>
                 </li>
               </ul>
               <ul>
                 <li>
                   <Link to="/profile" className="mt-2 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                    <div>
-                      <svg className="mr-4 h-8 w-8" fill="none" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="md:mr-4 h-8 w-8" fill="none" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                         <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                       </svg>
-                    </div>
                     <span className="md:block hidden text-xl">Profile</span>
                   </Link>
                 </li>
@@ -57,11 +51,9 @@ function LeftBar(){
               <ul>
                 <li>
                   <a href="#" className="mt-2 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
-                    <div>
-                      <svg className="mr-4 h-8 w-8" fill="none" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="md:mr-4 h-8 w-8" fill="none" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                         <path d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                       </svg>
-                    </div>
                     <span className="md:block hidden text-xl">More</span>
                   </a>
                 </li>

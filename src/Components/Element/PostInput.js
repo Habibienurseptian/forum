@@ -1,7 +1,18 @@
-import React from 'react';
-import BtnPost from './Button/BtnPost';
+import React, { useLayoutEffect, useRef } from 'react';
+import BtnPost from '../Button/BtnPost';
 
 function PostInput({ postContent, handleChange, handlePost }) {
+    const textbox = useRef(null);
+
+    function adjustHeight() {
+        if (textbox.current) {
+            textbox.current.style.height = "inherit";
+            textbox.current.style.height = `${textbox.current.scrollHeight}px`;
+        }
+    };
+
+    useLayoutEffect(adjustHeight, [postContent]);
+
     return (
         <aside>
             <hr className="border-gray-800"></hr>
@@ -16,6 +27,7 @@ function PostInput({ postContent, handleChange, handlePost }) {
                 <form>
                     <div className="flex-1 px-1 pt-2 mt-4">
                         <textarea
+                            ref={textbox}
                             value={postContent}
                             onChange={handleChange}
                             className="resize-none outline-none bg-transparent text-gray-400 font-medium text-lg md:w-fit w-[300px]"

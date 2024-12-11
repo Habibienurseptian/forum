@@ -1,29 +1,16 @@
 import React from "react";
+import Avatar from './Element/Avatar';
 
-function Comment({ comment, index, formatTime, currentTime }) {
+function Comment({ comment, index}) {
+    const createdAt = new Date();
     return (
         <article className="hover:bg-gray-800 transition duration-350 ease-in-out">
-            <div className="flex flex-shrink-0 p-4 pb-0">
-                <a href="#" className="flex-shrink-0 group block">
-                    <div className="flex items-center">
-                        <div>
-                            <img
-                                className="inline-block h-10 w-10 rounded-full"
-                                src="https://pbs.twimg.com/profile_images/1254779846615420930/7I4kP65u_400x400.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div className="ml-3">
-                            <p className="text-base leading-6 font-bold text-white mb-2">
-                                Miyuzaki San
-                                <span className="text-sm px-1 leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                                    @san_miyuzaki · {formatTime(currentTime)}
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <Avatar
+                name="Miyuzaki San"
+                username="san_miyuzaki"
+                profileImage="https://pbs.twimg.com/profile_images/1254779846615420930/7I4kP65u_400x400.jpg"
+                createdAt={createdAt}
+            />
 
             <div className="pl-16 ml-1 mr-5">
                 <p key={index} className="text-sm w-auto font-normal text-white flex-shrink break-normal">

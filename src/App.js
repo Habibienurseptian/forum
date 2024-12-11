@@ -15,15 +15,13 @@ const App = () => {
     {
       path: "/",
       element: (
-        <div className="bg-black  h-screen overflow-y-auto">
-          <div className="md:flex justify-center">
-            <LeftBar />
-            <main role="main" className="md:w-[990px]">
-              <section className="md:w-[600px] border border-y-0 border-gray-800 ml-[65px] h-full">
-                <AddPost />
-              </section>
-            </main>
-          </div>
+        <div className="md:flex justify-center">
+          <LeftBar />
+          <main role="main" className="md:w-[990px]">
+            <section className="md:w-[600px] border border-y-0 border-gray-800 ml-[65px] h-full">
+              <AddPost />
+            </section>
+          </main>
         </div>
       ),
       errorElement: <ErrorRoute />,
@@ -39,30 +37,26 @@ const App = () => {
     {
       path: "/profile",
       element: (
-        <div className="bg-black relative h-screen overflow-y-auto">
-          <div className="md:flex justify-center">
-            <LeftBar />
-            <main role="main" className="md:w-[990px]">
-              <section className="md:w-[600px] border border-y-0 border-gray-800 ml-[65px] h-full">
-                <Profile />
-              </section>
-            </main>
-          </div>
+        <div className="md:flex justify-center">
+          <LeftBar />
+          <main role="main" className="md:w-[990px]">
+            <section className="md:w-[600px] border border-y-0 border-gray-800 ml-[65px] h-full">
+              <Profile />
+            </section>
+          </main>
         </div>
       ),
     },
     {
       path: "/message",
       element: (
-        <div className="bg-black relative h-screen overflow-y-auto">
-          <div className="md:flex justify-center">
-            <LeftBar />
-            <main role="main" className="md:w-[990px]">
-              <section className="md:w-[600px] border border-y-0 border-gray-800 ml-[65px] h-full">
-                <Message className="w-full"/>
-              </section>
-            </main>
-          </div>
+        <div className="md:flex justify-center">
+          <LeftBar />
+          <main role="main" className="md:w-[990px]">
+            <section className="md:w-[600px] border border-y-0 border-gray-800 ml-[65px] h-full">
+              <Message className="w-full"/>
+            </section>
+          </main>
         </div>
       ),
     },
