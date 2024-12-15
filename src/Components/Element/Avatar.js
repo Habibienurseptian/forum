@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-const Avatar = ({ name, username, profileImage, createdAt }) => {
+const Avatar = ({ name, username, profileImage, createdAt, postId }) => {
     const [timeText, setTimeText] = useState(formatTime(createdAt));
+
     function formatTime(createdAt) {
         const now = new Date();
         const diffInSeconds = Math.floor((now - createdAt) / 1000);
-    
+
         if (diffInSeconds < 1) return "Baru saja";
         if (diffInSeconds < 60) return `${diffInSeconds} detik yang lalu`;
         const diffInMinutes = Math.floor(diffInSeconds / 60);
@@ -18,14 +19,13 @@ const Avatar = ({ name, username, profileImage, createdAt }) => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setTimeText(formatTime(createdAt));
+            setTimeText(formatTime(createdAt)); 
         }, 1000);
 
         return () => clearInterval(interval);
     }, [createdAt]);
-
     return (
-        <div className="flex flex-shrink-0 p-4 pb-0">
+        <div className="flex flex-shrink-0 p-4 pb-0" key={postId}>
             <a href="#" className="flex-shrink-0 group block">
                 <div className="flex items-center">
                     <div>

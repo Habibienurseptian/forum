@@ -5,9 +5,10 @@ import ShareButton from "./Button/Share";
 import Avatar from './Element/Avatar';
 
 function Post({ post, toggleCommentInput, handleShareClick, handleLike }) {
-    const createdAt = new Date();
+    const { createdAt, content, id } = post;
+
     return (
-        <article key={post.id} className="hover:bg-gray-800 transition duration-350 ease-in-out">
+        <article key={id} className="hover:bg-gray-800 transition duration-350 ease-in-out">
             <Avatar
                 name="Miyuzaki San"
                 username="san_miyuzaki"
@@ -17,7 +18,7 @@ function Post({ post, toggleCommentInput, handleShareClick, handleLike }) {
 
             <div className="pl-16 ml-1 mr-5">
                 <p className="text-sm w-auto font-normal text-white flex-shrink break-normal">
-                    {post.content}
+                    {content}
                 </p>
                 <div className="flex-shrink pr-6 pt-3">
                     <div className="flex items-center py-4 gap-20">

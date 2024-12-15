@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef, useState, useEffect } from "react";
-import Comment from "./Comment";
+import Comment from "./CommentView";
 import CommentInput from "./Element/CommentInput";
 import PostInput from "./Element/PostInput";
 import Post from "./Post";
@@ -11,6 +11,7 @@ function Main (){
     const [postContent, setPostContent] = useState("");
     const [postReplay, setPostReplay] = useState("");
     const [showCommentInput, setShowCommentInput] = useState({});
+    const [showMoreComments, setShowMoreComments] = useState({});
     
     function handleLike(postId) {
         setPosts((prevPosts) =>
@@ -38,34 +39,40 @@ function Main (){
         }
     };
 
-    useLayoutEffect(adjustHeight, [postContent]);
-    useLayoutEffect(adjustHeight, [postReplay]);
+    useLayoutEffect(() => {
+        adjustHeight();
+    }, [postContent, postReplay]);
+    
 
+    function handleInputChange(e, setState) {
+        setState(e.target.value);
+        adjustHeight();
+    }
+    
     function handleChange(e) {
-        setPostContent(e.target.value);
-        adjustHeight();
-    };
-
-
+        handleInputChange(e, setPostContent);
+    }
+    
     function handleChangeReplay(e) {
-        setPostReplay(e.target.value);
-        adjustHeight();
-    };
+        handleInputChange(e, setPostReplay);
+    }
+    
 
     function handlePost() {
         if (postContent.trim()) {
-            setPosts((prevPosts) => [
-                { id: Date.now(),
-                    content: postContent,
-                    likes: 0,
-                    komen: 0,
-                    comments: [],
-                 },
-                ...prevPosts,
-            ]);
-            setPostContent(""); 
+            const newPost = {
+                id: posts.length + 1,
+                createdAt: new Date(),
+                content: postContent,
+                likes: 0,
+                komen: 0,
+                comments: [],
+            };
+            setPosts((prevPosts) => [newPost, ...prevPosts]);
+            setPostContent("");
         }
     };
+    
 
     function toggleCommentInput(postId) {
         setShowCommentInput((prev) => ({
@@ -84,6 +91,13 @@ function Main (){
                 )
             );
         }
+    };
+
+    function toggleShowMoreComments(postId) {
+        setShowMoreComments((prev) => ({
+            ...prev,
+            [postId]: !prev[postId],
+        }));
     };
 
 
@@ -116,15 +130,18 @@ function Main (){
                         handleAddComment={handleAddComment}
                     />
                     <div>
-                    {post.comments.map((comment, index) => (
-                        <Comment
-                            key={index}
-                            comment={comment}
-                            index={index}
-                        />
-                    ))}
+                        {post.comments.slice(0, showMoreComments[post.id] ? post.comments.length : 2).map((comment, index) => (
+                            <Comment key={index} comment={comment} index={index} />
+                        ))}
                     </div>
-                    <div className="flex justify-center border-gray-800 border cursor-pointer rounded-full py-2 text-white m-2  hover:bg-blue-500">Show Comments</div>
+                    {post.comments.length > 2 && (
+                        <div
+                            className="flex justify-center border-gray-800 border cursor-pointer rounded-full py-2 text-white m-2 hover:bg-blue-500"
+                            onClick={() => toggleShowMoreComments(post.id)}
+                        >
+                            {showMoreComments[post.id] ? "Show Less" : "Show More"}
+                        </div>
+                    )}
                     <hr className="border-gray-800 border-4"></hr>
                 </li>
                 ))}
