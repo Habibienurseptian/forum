@@ -13,7 +13,7 @@ function Comment({ comment, index}) {
             />
 
             <div className="pl-16 ml-1 mr-5">
-                <p key={index} className="text-sm w-auto font-normal text-white flex-shrink break-normal">
+                <p key={index} className="text-sm w-auto font-normal text-white flex-shrink break-normal whitespace-pre-line">
                     {commentText}
                 </p>
                 <div className="flex-shrink pr-6 pt-3">

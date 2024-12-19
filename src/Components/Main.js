@@ -68,6 +68,7 @@ function Main (){
                 komen: 0,
                 comments: [],
             };
+            console.log(newPost)
             setPosts((prevPosts) => [newPost, ...prevPosts]);
             setPostContent("");
         }
