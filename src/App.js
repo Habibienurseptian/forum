@@ -16,7 +16,7 @@ const App = () => {
       path: "/",
       element: (
         <>
-          <div className="md:flex justify-center">
+          <div className="md:flex justify-center w-screen">
             <LeftBar />
             <main role="main" className="md:w-[990px]">
               <section className="md:w-[600px] border border-y-0 border-gray-800 md:ml-[65px] h-full">
