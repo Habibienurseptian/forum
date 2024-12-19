@@ -136,8 +136,8 @@ function LeftBar() {
     );
   } else {
     return (
-      <header className=" text-white md:py-5 fixed bottom-0 left-0 w-full bg-green-600">
-        <div className="p-1">
+      <header className=" text-white md:py-5 fixed bottom-0 w-full bg-green-600">
+        <div className="">
           <div className="">
             <nav className=" flex flex-row justify-around items-center py-2">
               <ul className="">
