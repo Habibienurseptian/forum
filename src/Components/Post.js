@@ -20,7 +20,7 @@ function Post({ post, toggleCommentInput, handleShareClick, handleLike }) {
       />
 
       <div className="pl-16 ml-1 mr-5">
-        <p className="text-sm w-auto font-normal text-white flex-shrink break-normal whitespace-pre-line">
+        <p className="text-sm w-auto font-normal text-white flex-shrink break-words whitespace-pre-wrap">
           {content}
         </p>
         <div className="flex-shrink pr-6 pt-3">

@@ -17,7 +17,7 @@ function PostInput({ postContent, handleChange, handlePost }) {
     <aside>
       <hr className="border-gray-800"></hr>
       <div className="flex ml-4 justify-between gap-2 mt-2">
-        <div className="aspect-square py-1">
+        <div className="aspect-square py-5">
           <img
             className="h-10 w-10 rounded-full"
             src="https://pbs.twimg.com/profile_images/1254779846615420930/7I4kP65u_400x400.jpg"
@@ -25,14 +25,13 @@ function PostInput({ postContent, handleChange, handlePost }) {
           />
         </div>
         <form className="flex-1">
-          <div className=" px-1 p">
+          <div className="px-1 py-5">
             <textarea
               ref={textbox}
               value={postContent}
               onChange={handleChange}
-              className="resize-none outline-none bg-transparent text-gray-400 font-medium text-2xl md:w-fit w-full"
+              className="flex-1 resize-none outline-none bg-transparent text-gray-400 font-medium text-2xl w-full"
               rows="1"
-              cols="50"
               placeholder="What's happening?"
             />
           </div>

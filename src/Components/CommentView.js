@@ -4,7 +4,7 @@ import Avatar from "./Element/Avatar";
 function Comment({ comment, index }) {
   const { comment: commentText, createdAt } = comment;
   return (
-    <article className="hover:bg-gray-800 transition duration-350 ease-in-out ml-10 flex-col">
+    <article className="hover:bg-gray-800 transition duration-350 ease-in-out flex-col">
       <Avatar
         name="Miyuzaki San"
         username="san_miyuzaki"
@@ -15,7 +15,7 @@ function Comment({ comment, index }) {
       <div className="flex flex-col ml-8 border-l-[3px] border-gray-700 pl-8">
         <p
           key={index}
-          className="text-sm w-auto font-normal text-white flex-shrink break-normal whitespace-pre-line"
+          className="text-sm w-auto font-normal text-white flex-shrink break-words whitespace-pre-line"
         >
           {commentText}
         </p>
