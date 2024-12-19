@@ -1,6 +1,6 @@
 const PostButton = ({ onClick, label, className }) => {
     return (
-      <button onClick={onClick} className={`mt-2 w-[48px] md:w-[230px] ${className}`}>
+      <button onClick={onClick} className={`w-[48px] md:w-[230px] ${className}`}>
         <div className="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-full bg-blue-400 hover:bg-blue-500">
           <svg
             className="md:mr-4 h-8 w-8 md:invisible"
