@@ -136,8 +136,8 @@ function LeftBar() {
     );
   } else {
     return (
-      <header className=" text-white md:py-5 fixed bottom-0 left-0 w-full bg-black">
-        <div className="">
+      <header className=" text-white md:py-5 fixed bottom-0 left-0 w-full bg-green-600">
+        <div className="p-1">
           <div className="">
             <nav className=" flex flex-row justify-around items-center py-2">
               <ul className="">
@@ -186,7 +186,7 @@ function LeftBar() {
                 onClick={() => setpostModal(true)}
                 label="Post"
                 className="custom-class"
-              />{" "}
+              />
               <ul>
                 <li>
                   <a
@@ -232,7 +232,7 @@ function LeftBar() {
 function ModalPost({ onClose, handlePost }) {
   return (
     <div className="flex fixed inset-0 bg-gray-500 bg-opacity-50 justify-center items-center">
-      <div className="bg-black p-4 rounded-lg shadow-lg md:w-1/3">
+      <div className="bg-black p-4 rounded-lg shadow-lg w-full">
         <div className="flex">
           <div className="m-4 w-10 py-1">
             <img
@@ -245,7 +245,6 @@ function ModalPost({ onClose, handlePost }) {
             <textarea
               className="resize-none outline-none bg-transparent text-gray-400 font-medium text-lg w-full"
               rows="10"
-              cols="50"
               placeholder="What's happening?"
             ></textarea>
           </div>
