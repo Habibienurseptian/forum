@@ -232,7 +232,7 @@ function LeftBar() {
 function ModalPost({ onClose, handlePost }) {
   return (
     <div className="flex fixed inset-0 bg-gray-500 bg-opacity-50 justify-center items-center">
-      <div className="bg-black p-4 rounded-lg shadow-lg w-full">
+      <div className="bg-black p-4 rounded-lg shadow-lg w-full md:w-auto">
         <div className="flex">
           <div className="m-4 w-10 py-1">
             <img

@@ -17,8 +17,8 @@ const App = () => {
       element: (
         <div className="md:flex justify-center w-screen">
           <LeftBar />
-          <main role="main" className="md:w-[990px]">
-            <section className="md:w-[600px] border border-y-0 border-gray-800 md:ml-[65px] h-full">
+          <main role="main" className="w-[990px]">
+            <section className="w-[600px] border border-y-0 border-gray-800 md:ml-[65px] h-full">
               <Main />
             </section>
           </main>
@@ -39,8 +39,8 @@ const App = () => {
       element: (
         <div className="md:flex justify-center">
           <LeftBar />
-          <main role="main" className="md:w-[990px]">
-            <section className="md:w-[600px] border border-y-0 border-gray-800 ml-[65px] h-full">
+          <main role="main" className="w-screen">
+            <section className="w-screen border border-y-0 border-gray-800 ml-[65px] h-full">
               <Profile />
             </section>
           </main>
