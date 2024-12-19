@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState, useEffect } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import Comment from "./CommentView";
 import CommentInput from "./Element/CommentInput";
 import PostInput from "./Element/PostInput";
@@ -83,15 +83,24 @@ function Main (){
 
     function handleAddComment(postId, comment) {
         if (comment.trim()) {
+            const createdAt = new Date();
             setPosts((prevPosts) =>
                 prevPosts.map((post) =>
                     post.id === postId
-                        ? { ...post, komen:post.komen + 1, comments: [...post.comments, comment] }
+                        ? { 
+                            ...post, 
+                            komen: post.komen + 1, 
+                            comments: [
+                                ...post.comments, 
+                                { comment, createdAt }
+                            ]
+                        }
                         : post
                 )
             );
         }
-    };
+    }
+    
 
     function toggleShowMoreComments(postId) {
         setShowMoreComments((prev) => ({

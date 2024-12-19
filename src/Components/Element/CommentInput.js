@@ -22,7 +22,7 @@ function CommentInput({ showCommentInput, post, handleChangeReplay, handleAddCom
                                 onChange={handleChangeReplay}
                                 id={`comment-input-${post.id}`}
                                 className="resize-none outline-none bg-transparent text-gray-400 font-medium text-lg md:w-fit w-[300px]"
-                                rows="1"
+                                rows="2"
                                 cols="50"
                                 placeholder="Post Your Replay"
                             />
