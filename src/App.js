@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LeftBar from "./Components/Leftbar";
-import AddPost from "./Components/Main";
+import Main from "./Components/Main";
 import Profile from "./Components/Profile";
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
@@ -19,7 +19,7 @@ const App = () => {
           <LeftBar />
           <main role="main" className="md:w-[990px]">
             <section className="md:w-[600px] border border-y-0 border-gray-800 md:ml-[65px] h-full">
-              <AddPost />
+              <Main />
             </section>
           </main>
         </div>
