@@ -15,10 +15,10 @@ const App = () => {
     {
       path: "/",
       element: (
-        <div className="md:flex justify-center w-screen">
+        <div className="md:flex justify-center">
           <LeftBar />
-          <main role="main" className="w-[990px]">
-            <section className="w-[600px] border border-y-0 border-gray-800 md:ml-[65px] h-full">
+          <main role="main" className="md:w-[990px] w-screen">
+            <section className="md:w-[600px] w-screen border border-y-0 border-gray-800 md:ml-[65px] h-full">
               <Main />
             </section>
           </main>
