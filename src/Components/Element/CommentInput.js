@@ -7,21 +7,21 @@ function CommentInput({ showCommentInput, post, handleChangeReplay, handleAddCom
         showCommentInput[post.id] && (
             <aside>
                 <hr className="border-gray-800" />
-                <div className="flex">
-                    <div className="m-4 w-10 py-1">
+                <div className="flex ml-4 justify-between gap-2 mt-2">
+                    <div className="aspect-square py-1">
                         <img
-                            className="inline-block h-10 w-10 rounded-full"
+                            className="h-10 w-10 rounded-full"
                             src="https://pbs.twimg.com/profile_images/1254779846615420930/7I4kP65u_400x400.jpg"
                             alt=""
                         />
                     </div>
-                    <form>
-                        <div className="flex-1 px-1 pt-2 mt-4">
+                    <form className="flex-1">
+                        <div className="px-1 p">
                             <textarea
                                 ref={textbox}
                                 onChange={handleChangeReplay}
                                 id={`comment-input-${post.id}`}
-                                className="resize-none outline-none bg-transparent text-gray-400 font-medium text-lg md:w-fit w-[300px]"
+                                className="resize-none outline-none bg-transparent text-gray-400 font-medium text-2xl md:w-fit w-full"
                                 rows="2"
                                 cols="50"
                                 placeholder="Post Your Replay"
