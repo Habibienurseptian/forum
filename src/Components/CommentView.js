@@ -12,7 +12,7 @@ function Comment({ comment, index }) {
         createdAt={createdAt}
       />
 
-      <div className="flex flex-col ml-9 border-l-[3px] border-gray-700 pl-8">
+      <div className="flex flex-col ml-10 border-l-[3px] border-gray-700 pl-8">
         <p
           key={index}
           className="text-sm w-auto font-normal text-white flex-shrink break-words whitespace-pre-line"
