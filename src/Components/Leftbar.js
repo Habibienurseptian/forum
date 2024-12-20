@@ -183,11 +183,11 @@ function LeftBar() {
                   </Link>
                 </li>
               </ul>
-              <PostButton
+              {/* <PostButton
                 onClick={() => setpostModal(true)}
                 label="Post"
                 className="custom-class"
-              />
+              /> */}
               <ul>
                 <li>
                   <a
