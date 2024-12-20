@@ -40,7 +40,7 @@ const App = () => {
         <div className="md:flex justify-center">
           <LeftBar />
           <main role="main" className="w-screen">
-            <section className="w-screen border border-y-0 border-gray-800 ml-[65px] h-full">
+            <section className="w-screen border border-y-0 border-gray-800 h-full">
               <Profile />
             </section>
           </main>
@@ -53,7 +53,7 @@ const App = () => {
         <div className="md:flex justify-center">
           <LeftBar />
           <main role="main" className="md:w-[990px]">
-            <section className="md:w-[600px] border border-y-0 border-gray-800 ml-[65px] h-full">
+            <section className="md:w-[600px] border border-y-0 border-gray-800 h-full">
               <Message className="w-full" />
             </section>
           </main>
