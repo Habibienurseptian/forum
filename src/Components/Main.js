@@ -9,7 +9,6 @@ function Main() {
   const textbox = useRef(null);
   const [posts, setPosts] = useState([]);
   const [postContent, setPostContent] = useState("");
-  const [postReplay, setPostReplay] = useState("");
   const [showCommentInput, setShowCommentInput] = useState({});
   const [showMoreComments, setShowMoreComments] = useState({});
 
@@ -40,7 +39,7 @@ function Main() {
 
   useLayoutEffect(() => {
     adjustHeight();
-  }, [postContent, postReplay]);
+  }, [postContent]);
 
   function handleInputChange(e, setState) {
     setState(e.target.value);
@@ -51,9 +50,6 @@ function Main() {
     handleInputChange(e, setPostContent);
   }
 
-  function handleChangeReplay(e) {
-    handleInputChange(e, setPostReplay);
-  }
 
   function handlePost() {
     if (postContent.trim()) {
@@ -120,12 +116,14 @@ function Main() {
               toggleCommentInput={toggleCommentInput}
               handleShareClick={handleShareClick}
             />
-            <CommentInput
-              showCommentInput={showCommentInput}
-              post={post}
-              handleChangeReplay={handleChangeReplay}
-              handleAddComment={handleAddComment}
-            />
+            {showCommentInput[post.id] && (
+              <CommentInput
+                showCommentInput={showCommentInput}
+                post={post}
+                handleAddComment={handleAddComment}
+              />
+            )}
+            ;
             <div>
               {post.comments
                 .slice(0, showMoreComments[post.id] ? post.comments.length : 2)

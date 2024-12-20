@@ -16,7 +16,7 @@ function PostInput({ postContent, handleChange, handlePost }) {
   return (
     <aside>
       <hr className="border-gray-800"></hr>
-      <div className="flex ml-4 justify-between gap-2 mt-2">
+      <div className="flex ml-4 justify-start gap-2 mt-2">
         <div className="aspect-square py-5">
           <img
             className="h-10 w-10 rounded-full"
