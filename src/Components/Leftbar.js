@@ -122,13 +122,14 @@ function LeftBar() {
                 label="Post"
                 className="custom-class"
               />
-            </nav>
-            <ProfileCard
+              <ProfileCard
               name="Miyuzaki San"
               username="san_miyuzaki"
               profileImage="https://pbs.twimg.com/profile_images/1254779846615420930/7I4kP65u_400x400.jpg"
               href="#"
             />
+            </nav>
+            
           </div>
         </div>
         {postModal && <ModalPost onClose={() => setpostModal(false)} />}

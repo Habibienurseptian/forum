@@ -15,13 +15,13 @@ const App = () => {
     {
       path: "/",
       element: (
-        <div className="md:flex justify-center">
+        <div className="flex justify-center">
           <LeftBar />
-          {/* <main role="main" className="md:w-[990px] w-full">
+          <main role="main" className="md:w-[990px] w-full">
             <section className="md:w-[600px] w-full border border-y-0 border-gray-800 md:ml-[65px] h-full">
               <Main />
             </section>
-          </main> */}
+          </main>
         </div>
       ),
       errorElement: <ErrorRoute />,
