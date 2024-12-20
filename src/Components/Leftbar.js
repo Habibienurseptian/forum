@@ -123,13 +123,12 @@ function LeftBar() {
                 className="custom-class"
               />
               <ProfileCard
-              name="Miyuzaki San"
-              username="san_miyuzaki"
-              profileImage="https://pbs.twimg.com/profile_images/1254779846615420930/7I4kP65u_400x400.jpg"
-              href="#"
-            />
+                name="Miyuzaki San"
+                username="san_miyuzaki"
+                profileImage="https://pbs.twimg.com/profile_images/1254779846615420930/7I4kP65u_400x400.jpg"
+                href="#"
+              />
             </nav>
-            
           </div>
         </div>
         {postModal && <ModalPost onClose={() => setpostModal(false)} />}
@@ -137,15 +136,15 @@ function LeftBar() {
     );
   } else {
     return (
-      <header className=" text-white md:py-5 fixed bottom-0 left-0 w-screen bg-green-600">
+      <header className=" text-white md:py-5 sticty bottom-0 left-0 w-screen bg-green-600 max-w-full">
         <div className="">
           <div className="">
-            <nav className=" flex flex-row justify-around items-center py-2">
+            <nav className=" flex flex-wrap justify-around items-center py-2">
               <ul className="">
                 <li className="list-none">
                   <Link
                     to="/"
-                    className="  group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full hover:bg-gray-800 hover:text-blue-300"
+                    className=" group flex items-center px-2 py-2 text-base leading-6 font-semibold rounded-full hover:bg-gray-800 hover:text-blue-300"
                   >
                     <svg
                       className="md:mr-4 h-8 w-8 "
